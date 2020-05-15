@@ -16,12 +16,14 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		System.out.println("==========Prefixer Line Writer==========\n");
 		ArrayList<String> contents = new ArrayList<String>();
+		String flag = "-true";
 		String line = "", fileArg = "", headerText = "";
 		if (args.length == 0) {
 			System.out.println("Please provide the proper arguments when running this file: \njava -jar example.txt \"Hello World\"\n\n");
 		}
 		fileArg = args[0];// File arg
 		headerText = args[1];// the string to insert
+		flag = args[2];
 		System.out.println("Each line will be prefixed by " + headerText + "\n");
 		BufferedReader fis = null;
 		try {
@@ -39,7 +41,8 @@ public class Main {
 		fis = new BufferedReader(new FileReader(fileArg));//Reopens file in new instance
 		FileWriter f = new FileWriter(fileArg);
 		for (int i = 0; i < contents.size(); i++) {//Writes our text
-			f.write(headerText + " " + contents.get(i) + "\n");
+			if (flag.equals("-true")) {f.write(headerText + " " + contents.get(i) + "\n");}
+			else {f.write(headerText + contents.get(i) + "\n");}
 		}
 		System.out.println("All lines have the prefix applied. You can safely open the file.");
 		System.out.println("========================================\n");
