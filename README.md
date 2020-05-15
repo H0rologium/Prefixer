@@ -4,7 +4,7 @@ Prefixer is a simple java program that adds a specified string to the beginning 
 You can use this program by running it from the command line with the following arguments:
 "filename/path" "Text to prefix with" "-true" 
 
-The prefix does contain an extra whitespace after the prefix, if you do not want the whitespace added add the '-false' argument to the end of the command you are using to run the jar.
+The prefix does contain an extra whitespace after the prefix, if you do not want the whitespace added add the '-false' argument to the end of the command you are using to run the jar instead of '-true'.
 
 an example run of the code will look like this:
 "java -jar Prefixer.jar "C:\users\user\Documents\example.txt" "ECHO" -true
